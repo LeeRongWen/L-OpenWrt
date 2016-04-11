@@ -55,27 +55,35 @@ Ini adalah catatan saya tentang apa yang saya lakukan terhadap TP-LINK MR-3020
 
 ` opkg install comgt kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan usb-modeswitch usb-modeswitch-data luci-proto-3g`
 
+3. Akses Led-GPIO
+4. 
+ubah file ini
 
-config /etc/rc.local
+` vim /etc/rc.local`
 
-rmmod leds_gpio
+isi dengan ini :
 
-echo 0 > /sys/class/gpio/export
-echo out > /sys/class/gpio/gpio0/direction
+```
+	rmmod leds_gpio
 
-echo 17 > /sys/class/gpio/export
-echo out > /sys/class/gpio/gpio17/direction
+	echo 0 > /sys/class/gpio/export
+	echo out > /sys/class/gpio/gpio0/direction
 
-echo 26 > /sys/class/gpio/export
-echo out > /sys/class/gpio/gpio26/direction
+	echo 17 > /sys/class/gpio/export
+	echo out > /sys/class/gpio/gpio17/direction
 
-echo 27 > /sys/class/gpio/export
-echo out > /sys/class/gpio/gpio27/direction
+	echo 26 > /sys/class/gpio/export
+	echo out > /sys/class/gpio/gpio26/direction
 
-echo 7 > /sys/class/gpio/export
-echo out > /sys/class/gpio/gpio7/direction
+	echo 27 > /sys/class/gpio/export
+	echo out > /sys/class/gpio/gpio27/direction
 
-echo 29 > /sys/class/gpio/export
-echo out > /sys/class/gpio/gpio29/direction
+	echo 7 > /sys/class/gpio/export
+	echo out > /sys/class/gpio/gpio7/direction
 
-exit 0
+	echo 29 > /sys/class/gpio/export
+	echo out > /sys/class/gpio/gpio29/direction
+
+	exit 0
+
+```

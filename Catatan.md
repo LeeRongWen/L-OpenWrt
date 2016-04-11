@@ -7,11 +7,11 @@ Ini adalah catatan saya tentang apa yang saya lakukan terhadap TP-LINK MR-3020
 
 	a. install packet exroot
 	
-	`# opkg install kmod-usb-storage kmod-fs-ext4 block-mount`
+`	# opkg install kmod-usb-storage kmod-fs-ext4 block-mount`
 	
 	b. salin file asli ke FlashDrive
 	
-	```
+```
 	 mkdir -p /mnt/sda1
 	 mount /dev/sda1 /mnt/sda1
 	 mkdir -p /tmp/cproot
@@ -21,15 +21,15 @@ Ini adalah catatan saya tentang apa yang saya lakukan terhadap TP-LINK MR-3020
 	 umount /mnt/sda1
 	 /etc/init.d/fstab enable
 	 /etc/init.d/fstab start
-	```
+```
 	
 	c. ubah config fstab
 	
-	` vi /etc/config/fstab`
+`	vi /etc/config/fstab`
 	
 	Ubah isinya dengan ini :
 	
-	```
+```
 	config global 'automount'
         	option from_fstab '1'
         	option anon_mount '1'
@@ -49,7 +49,7 @@ Ini adalah catatan saya tentang apa yang saya lakukan terhadap TP-LINK MR-3020
 	config swap
         	option device '/dev/sda2'
         	option enabled '1'
-	```
+```
 
 2. Install Packet modem
 

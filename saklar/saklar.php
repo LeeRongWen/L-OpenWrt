@@ -41,6 +41,7 @@ function semua($status,$gpios){
   }
 }
 
+
 if(isset($_POST['saklar'])){
   $status = $_POST['status'];
   $gpio   = $_POST['gpio'];

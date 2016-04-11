@@ -3,10 +3,10 @@ Ini adalah catatan saya tentang apa yang saya lakukan terhadap TP-LINK MR-3020
 
 1. Exroot (External Root)
 
-`# Note : FlashDrive harus sudah di partisi, sda1 ext4 dan sda2 swap
+`# Note : FlashDrive harus sudah di partisi, sda1 ext4 dan sda2 swap`
 
 	a. install packet exroot
-	`# opkg install kmod-usb-storage kmod-fs-ext4 block-mount
+	`# opkg install kmod-usb-storage kmod-fs-ext4 block-mount`
 	b. salin file asli ke FlashDrive
 	```
 	 mkdir -p /mnt/sda1
@@ -20,7 +20,7 @@ Ini adalah catatan saya tentang apa yang saya lakukan terhadap TP-LINK MR-3020
 	 /etc/init.d/fstab start
 	```
 	c. ubah config fstab
-	` vi /etc/config/fstab
+	` vi /etc/config/fstab`
 	Ubah isinya dengan ini :
 	```
 	config global 'automount'
@@ -45,49 +45,7 @@ Ini adalah catatan saya tentang apa yang saya lakukan terhadap TP-LINK MR-3020
 	```
 
 2. Install Packet modem
-` opkg install comgt kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan usb-modeswitch usb-modeswitch-data luci-proto-3g
-install modem
-opkg install comgt kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan usb-modeswitch usb-modeswitch-data luci-proto-3g
-
-
-
-install exroot
-opkg install kmod-usb-storage kmod-fs-ext4 block-mount
-
-pastikan sda1 adalah ext4 dan sda2 swap
-
-$ mkdir -p /mnt/sda1
-$ mount /dev/sda1 /mnt/sda1
-$ mkdir -p /tmp/cproot
-$ mount --bind / /tmp/cproot
-$ tar -C /tmp/cproot -cvf - . | tar -C /mnt/sda1 -xf -
-$ umount /tmp/cproot
-$ umount /mnt/sda1
-$ /etc/init.d/fstab enable
-$ /etc/init.d/fstab start
-
-$ vi /etc/config/fstab
-
-config global 'automount'
-	option from_fstab '1'
-	option anon_mount '1'
-
-config global 'autoswap'
-	option from_fstab '1'
-	option anon_swap '0'
-
-config mount
-	option fstype 'ext4'
-	option options 'rw,sync'
-	option target '/'
-	option device '/dev/sda1'
-	option uuid 'b263ce77-fb8b-4c35-8ae6-ba9f36f514bb'
-	option enabled '1'
-
-config swap
-	option device '/dev/sda2'
-	option enabled '1'
-
+` opkg install comgt kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan usb-modeswitch usb-modeswitch-data luci-proto-3g`
 
 
 config /etc/rc.local

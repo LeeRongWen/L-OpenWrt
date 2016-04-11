@@ -1,7 +1,7 @@
 # Catatan
 Ini adalah catatan saya tentang apa yang saya lakukan terhadap TP-LINK MR-3020
 
-1. Exroot (External Root)
+> 1. Exroot (External Root)
 
 `# Note : FlashDrive harus sudah di partisi, sda1 ext4 dan sda2 swap`
 
@@ -51,12 +51,12 @@ Ini adalah catatan saya tentang apa yang saya lakukan terhadap TP-LINK MR-3020
         	option enabled '1'
 ```
 
-2. Install Packet modem
+> 2. Install Packet modem
 
 ` opkg install comgt kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan usb-modeswitch usb-modeswitch-data luci-proto-3g`
 
-3. Akses Led-GPIO
-4. 
+> 3. Akses Led-GPIO
+
 ubah file ini
 
 ` vim /etc/rc.local`

@@ -13,3 +13,8 @@ Ini repo isi file file yang saya gunakan untuk TP-LINK MR-3020 saya
 ```
   isinya sofware / firmware openwrt dan TP-Link MR3020
 ```
+> Folder pip
+
+```
+  isinya packet untuk install pip di openwrt AA
+```

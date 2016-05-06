@@ -1,5 +1,5 @@
 <?php
-
+ob_start();
 $gpio0  = "/sys/devices/virtual/gpio/gpio0/value";
 $gpio7  = "/sys/devices/virtual/gpio/gpio7/value";
 $gpio17 = "/sys/devices/virtual/gpio/gpio17/value";
@@ -14,12 +14,12 @@ function saklar($status,$gpio,$gpios){
   if($status > 0){
     // hidup
     shell_exec("echo 1 > $gpios[$gpio]");
-    header("location: index.html");
+    header("location: index.php");
   }
   else{
     // mati
     shell_exec("echo 0 > $gpios[$gpio]");
-    header("location: index.html");
+    header("location: index.php");
   }
 }
 
@@ -30,14 +30,14 @@ function semua($status,$gpios){
     for($i = 0;$i<=count($gpios);$i++){
       shell_exec("echo 1 > $gpios[$i]");
     }
-    header("location: index.html");
+    header("location: index.php");
   }
   else{
     // matikan semua
     for($i = 0;$i<=count($gpios);$i++){
       shell_exec("echo 0 > $gpios[$i]");
     }
-    header("location: index.html");
+    header("location: index.php");
   }
 }
 

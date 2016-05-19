@@ -53,7 +53,17 @@ Ini adalah catatan saya tentang apa yang saya lakukan terhadap TP-LINK MR-3020
 
 > 2. Install Packet modem
 
+__> MR3020
+
 ` opkg install comgt kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan usb-modeswitch usb-modeswitch-data luci-proto-3g`
+
+__> HG553
+
+```
+chat comgt kmod-usb-acm kmod-usb-ohci kmod-usb-serial kmod-usb-serial-option kmod-usb-serial-wwan kmod-usb-uhci libpthread librt libusb usb-modeswitch luci-proto-3g
+
+uqmi kmod-mii comgt-directip kmod-usb-serial-ipw kmod-usb-serial-sierrawireless kmod-usb-net-sierrawireless kmod-usb-net kmod-usb-wdm kmod-usb-net-qmi-wwan
+```
 
 > 3. Akses Led-GPIO
 
